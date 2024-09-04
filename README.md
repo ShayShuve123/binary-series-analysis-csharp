@@ -41,9 +41,3 @@ This exercise checks if binary numbers provided by the user are palindromes and 
 - .NET Core SDK (version 5.0 or higher).
 - Visual Studio 2022 or another compatible IDE for building and running C# applications.
 
-
-The Ascending Order Is: 120, 85, 65
-Decimal numbers average: 90.00
-Longest sequence: 5 (1000001)
-Number Of Palindromes: 2 (1000001, 1010101)
-Highest Ones Lowest Zeros: 120 binary (1111000)
