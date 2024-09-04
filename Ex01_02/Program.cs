@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text; 
 
 namespace Ex01_02
 {
@@ -8,34 +9,38 @@ namespace Ex01_02
         {
             GenerateLetterTree();
         }
-        // $G$ NTT-006 (-10) You should have used StringBuilder here.
+
         public static void GenerateLetterTree()
         {
             char currentChar = 'A';
             int numOfLines = 5;
 
+            StringBuilder treeBuilder = new StringBuilder(); 
+
             for (int i = 1; i <= numOfLines; i++)
             {
-                Console.Write(i + " ");
-                Console.Write(new string(' ', (numOfLines - i) * 2));
+                treeBuilder.Append(i + " "); 
+                treeBuilder.Append(new string(' ', (numOfLines - i) * 2));
 
                 int numOfCharsInRow = 2 * i - 1;
                 for (int j = 0; j < numOfCharsInRow; j++)
                 {
                     if (currentChar <= 'Z')
                     {
-                        Console.Write(currentChar + " ");
+                        treeBuilder.Append(currentChar + " "); 
                         currentChar++;
                     }
                 }
 
-                Console.WriteLine();
+                treeBuilder.AppendLine();
             }
 
             for (int i = 6; i <= 7; i++)
             {
-                Console.WriteLine(i + " " + new string(' ', 7) + "|Z|");
+                treeBuilder.AppendLine(i + " " + new string(' ', 7) + "|Z|"); 
             }
+
+            Console.Write(treeBuilder.ToString()); 
         }
     }
 }

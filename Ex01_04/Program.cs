@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Ex01_04
 {
-    // $G$ CSS-027 (-5) Missing blank lines between methods.
     class Program
     {
         static void Main()
         {
             analyzeString();
         }
+
         private static void analyzeString()
         {
             string userInput;
@@ -40,7 +40,8 @@ namespace Ex01_04
             }
 
             Console.WriteLine(resultMessage.ToString());
-        } // $G$ NTT-999 (-10) You should have used Environment.NewLine instead of "\n".
+        }
+
         private static string handleUserInput()
         {
             string userInput;
@@ -50,7 +51,7 @@ namespace Ex01_04
 
             while ((!IsAllDigits(userInput) && !IsAllLetters(userInput)) || userInput.Length != 8)
             {
-                Console.WriteLine("The input you entered is invalid.\n Please try again...");
+                Console.WriteLine("The input you entered is invalid." + Environment.NewLine + " Please try again...");
                 userInput = Console.ReadLine();
             }
 
@@ -115,6 +116,7 @@ namespace Ex01_04
         {
             return int.Parse(i_UserInput) % 3 == 0;
         }
+
         private static int numberOfUpperCase(string i_UserInput)
         {
             int counterUpperCase = 0;
@@ -145,6 +147,5 @@ namespace Ex01_04
 
             return isValidAlphabetic;
         }
-
     }
 }

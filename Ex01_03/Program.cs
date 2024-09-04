@@ -9,18 +9,23 @@ namespace Ex01_03
         {
             PrintTree();
         }
-        // $G$ SFN-012 (-5) The program does not cope properly with invalid input. Invalid input should not end the program
+
         public static void PrintTree()
         {
-            Console.Write("Please enter the tree height (max 15): ");
-            string userInput = Console.ReadLine();
+            string userInput;
             int i_TotalHeight = 0;
 
-            if (int.TryParse(userInput, out i_TotalHeight) == false || i_TotalHeight < 3 || i_TotalHeight > 15)
+            do
             {
-                Console.WriteLine("Invalid input");
-                return;
-            }
+                Console.Write("Please enter the tree height (max 15): ");
+                userInput = Console.ReadLine();
+
+                if (int.TryParse(userInput, out i_TotalHeight) == false || i_TotalHeight < 3 || i_TotalHeight > 15)
+                {
+                    Console.WriteLine("Invalid input, please try again.");
+                }
+
+            } while (i_TotalHeight < 3 || i_TotalHeight > 15); 
 
             if (i_TotalHeight == 3)
             {

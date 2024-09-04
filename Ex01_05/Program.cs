@@ -5,15 +5,13 @@ using System.Text;
 
 namespace Ex01_05
 {
-    // $G$ CSS-027 (-5) Missing blank lines between methods.
-    // $G$ SFN-019 (-5) The program does not cope properly with invalid input.
-    //                  Example: Input -1234567 will throw FormatException
     class Program
     {
         static void Main()
         {
             runStatistics();
-        } // $G$ NTT-999 (-10) You should have used Environment.NewLine instead of "\n".
+        } 
+
         private static string handleUserInput()
         {
             string userInput;
@@ -21,7 +19,7 @@ namespace Ex01_05
             Console.WriteLine("Please enter an integer number with 8 digits:");
             userInput = Console.ReadLine();
 
-            while (userInput.Length != 8 || !int.TryParse(userInput, out _))
+            while (userInput.Length != 8 || !int.TryParse(userInput, out int result) || result < 0)
             {
                 Console.WriteLine("The input you entered is invalid.\n Please try again...");
                 userInput = Console.ReadLine();
@@ -29,6 +27,7 @@ namespace Ex01_05
 
             return userInput;
         }
+
         private static int countDigitSmallerThanUnitNumber(string i_UserInput)
         {
             char unitsNumber = i_UserInput[i_UserInput.Length - 1];
@@ -44,6 +43,7 @@ namespace Ex01_05
 
             return counterOfNumberSmallerThanUnitsNumber;
         }
+
         private static int countDigitDividedByThree(string i_UserInput)
         {
             int counterNumberDividedByThree = 0;
@@ -58,6 +58,7 @@ namespace Ex01_05
 
             return counterNumberDividedByThree;
         }
+
         private static int differenceBetweenMaxAndMinDigits(string i_UserInput)
         {
             int minNumber = int.MaxValue, maxNumber = int.MinValue;
@@ -72,6 +73,7 @@ namespace Ex01_05
 
             return maxNumber - minNumber;
         }
+
         private static int countUniqueDigits(string i_UserInput)
         {
             int counterUniqueDigits = 0;
@@ -97,6 +99,7 @@ namespace Ex01_05
 
             return counterUniqueDigits;
         }
+
         private static void runStatistics()
         {
             string userInput;

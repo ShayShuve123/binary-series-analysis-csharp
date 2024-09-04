@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Ex01_01
 {
-    // $G$ RUL-999 (-10) The name format of the main folder, is not as required.
-    // $G$ THE-001 (-3) The explanation for the file being an assembly is lacking. The file is an assembly because it can be analysed by ILDASM.
-    // $G$ THE-999 (0) Good Job!, Keep up with the clean code.
+
     class Program
     {
         static string[] binaryNumbers = new string[3];
@@ -16,7 +14,6 @@ namespace Ex01_01
         {
             binarySeries();
         }
-        // $G$ CSS-027 (-2) Unnecessary blank lines.
         private static void binarySeries()
         {
             handleUserInput();
@@ -31,7 +28,7 @@ namespace Ex01_01
 
             highestOnesLowestZeros(binaryNumbers);
         }
-        // $G$ CSS-006 (-3) Missing blank line, after "if / else" block.
+
         private static bool inputIsValidNumber(string i_Input)
         {
             bool isValidNumber = true;
@@ -40,6 +37,7 @@ namespace Ex01_01
             {
                 isValidNumber = false;
             }
+
             foreach (char c in i_Input)
             {
                 if (c != '0' && c != '1')
@@ -61,7 +59,7 @@ namespace Ex01_01
 
             return decimalValue;
         }
-        // $G$ NTT-999 (-10) You should have used Environment.NewLine instead of "\n".
+
         private static void handleUserInput()
         {
             int numberOfValidNumbers = 0;
@@ -214,7 +212,6 @@ namespace Ex01_01
 
             Console.WriteLine(sb.ToString());
         }
-        // $G$ CSS-007 (-3) Missing blank line, after "for" block.
         private static void highestOnesLowestZeros(string[] i_BinaryArr)
         {
             int maxOnes = int.MinValue, minZeros = int.MaxValue, maxIndex = -1;
@@ -243,6 +240,7 @@ namespace Ex01_01
                     maxIndex = i;
                 }
             }
+
             int decimalValue = convertToDecimal(i_BinaryArr[maxIndex]);
             Console.WriteLine($"highest Ones Lowest Zeros: {decimalValue} (binary : {i_BinaryArr[maxIndex]})");
         }
